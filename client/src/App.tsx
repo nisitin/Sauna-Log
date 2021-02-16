@@ -13,6 +13,7 @@ const App: React.FC = ()  =>{
   return (
   <>
     <BrowserRouter>
+    <Header />
       <Switch>
         <Route exact path="/" component={Home} />
         <Route exact path="/register" component={Register} />
