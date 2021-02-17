@@ -1,8 +1,8 @@
 import React from 'react';
 import {BrowserRouter, Switch, Route} from "react-router-dom";
 import Home from "./Page/Home";
-import Register from "./Components/auth/Register";
-import Login from "./Components/auth/Login";
+import Register from "./Page/Login";
+import Login from "./Page/Login";
 // Components 
 import {Header} from "./Components/Header"
 

@@ -5,7 +5,7 @@ import React,{useState} from "react";
 //     onChange: (e: React.ChangeEvent<HTMLInputElement>) => void
 // }
 
-const Register = () => {
+const RegisterForm = () => {
 
     const [name, setName] = useState('');
     const [email, setEmail] = useState('');
@@ -54,4 +54,4 @@ const Register = () => {
     )
 }
 
-export default Register;
+export default RegisterForm;
