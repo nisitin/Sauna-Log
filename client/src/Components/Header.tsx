@@ -1,9 +1,13 @@
 import {Link } from "react-router-dom";
+import styled from "styled-components";
 
+const StyledComponent = styled.div`
+    height: 300px
+`;
 
  export const Header = () => {
      return (
-    <>
+    <StyledComponent>
         <Link className="nav-link" to="/">
             Home
         </Link>
@@ -13,7 +17,7 @@ import {Link } from "react-router-dom";
         <Link className="nav-link" to="/login">
             ログイン
         </Link>
-    </>
+    </StyledComponent>
      )
 }
 
