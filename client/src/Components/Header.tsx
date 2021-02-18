@@ -2,7 +2,8 @@ import {Link } from "react-router-dom";
 import styled from "styled-components";
 
 const StyledComponent = styled.div`
-    height: 300px
+    height: 30px
+    width: 500vh
 `;
 
  export const Header = () => {
