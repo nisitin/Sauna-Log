@@ -1,4 +1,4 @@
-import { SET_ERRORS, LOADING_UI, CLEAR_ERRORS } from "../../constants/index";
+import { SET_ERRORS, LOADING_UI, CLEAR_ERRORS } from "../../../constants/index";
 
 const initialState = {
   loading: false,

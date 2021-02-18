@@ -1,4 +1,4 @@
-import { SET_ERRORS, LOADING_UI, CLEAR_ERRORS } from "../../constants/index";
+import { Dispatch } from "redux";
 
 // export interface loginUsers {
 //   email: string;
