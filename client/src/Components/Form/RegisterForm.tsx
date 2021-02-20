@@ -18,7 +18,6 @@ const RegisterForm = () => {
 
     return (
         <>
-        <h1>登録</h1>
         <form>
             <div className="form-group-email">
                 <input
