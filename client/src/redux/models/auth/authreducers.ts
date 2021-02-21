@@ -1,29 +1,20 @@
-import { LOGIN, LOGOUT } from "../../../constants/index";
-
-export interface LoginAction {
-  type: typeof LOGIN;
-  token: string;
-}
-
-export interface LogoutAction {
-  type: typeof LOGOUT;
-}
-
-export interface AuthState {
-  token: string;
-}
+import {AuthState, AuthAction} from "../auth/authTypes";
+import {LOGIN, } from "../../constants/index";
 
 const initialState: AuthState = {
-  token: null,
+  token : localStorage.getItem('cstoken'),
+  isAuthenticated: null,
+  loading: false,
+  user: null
 };
+//ここは何もない状態のものを指している
 
-export default (state = initialState, action) => {
-  switch (action.type) {
-    case LOGIN:
-      return { ...state, token: action.token };
-    case LOGOUT:
-      return { token: null };
-    default:
-      return state;
-  }
-};
+export const authReducer = (state = initialState, action: AuthAction): AuthState => {
+  switch(action.type){
+   
+}
+
+
+
+
+export default authReducer
