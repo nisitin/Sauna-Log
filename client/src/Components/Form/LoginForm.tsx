@@ -10,6 +10,7 @@ const LoginForm = () => {
 
     return (
         <>
+            <h1>ログイン</h1>
             <form>
         
             <div className="form-group-email">

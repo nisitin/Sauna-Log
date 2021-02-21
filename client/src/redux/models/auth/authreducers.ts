@@ -1,33 +1,29 @@
-import { SET_ERRORS, LOADING_UI, CLEAR_ERRORS } from "../../../constants/index";
+import { LOGIN, LOGOUT } from "../../../constants/index";
 
-const initialState = {
-  loading: false,
-  errors: null,
+export interface LoginAction {
+  type: typeof LOGIN;
+  token: string;
+}
+
+export interface LogoutAction {
+  type: typeof LOGOUT;
+}
+
+export interface AuthState {
+  token: string;
+}
+
+const initialState: AuthState = {
+  token: null,
 };
 
-export interface loginUsers {
-  email: string;
-  name: string;
-  password: string;
-}
-
-export interface registerUser {
-  email: string;
-  password: string;
-}
-
-export const initUser = (): registerUser => ({
-  email: "",
-  password: "",
-});
-
-export default function (state = initialState, action: any) {
+export default (state = initialState, action) => {
   switch (action.type) {
-    case SET_ERRORS:
-      return {
-        ...state,
-        loading: false,
-        errors: null,
-      };
+    case LOGIN:
+      return { ...state, token: action.token };
+    case LOGOUT:
+      return { token: null };
+    default:
+      return state;
   }
-}
+};
