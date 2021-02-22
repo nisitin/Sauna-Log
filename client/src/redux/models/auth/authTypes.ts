@@ -1,8 +1,10 @@
 import {
-  LOGIN,
+  REGISTER_SUCCESS,
+  LOGIN_SUCCESS,
   LOGOUT,
   USER_LOADING,
   SET_CURRENT_USER,
+  AUTH_ERROR,
 } from "../../constants/index";
 
 export interface AuthState {
@@ -21,20 +23,45 @@ export interface currentUser {
   updateAt: string;
 }
 
-interface RegisterUser {
+export interface RegisterUser {
   name: string;
   email: string;
   password: string;
   password2: string;
 }
 
-interface SignInUser {
+export interface loginInUser {
   email: string;
   password: string;
+  password2: string;
 }
 
 interface logout {
   type: typeof LOGOUT;
 }
 
-export type AuthAction = RegisterUser | SignInUser | logout;
+interface AuthError {
+  type: typeof AUTH_ERROR;
+}
+
+interface UserLoadingAction {
+  type: typeof USER_LOADING;
+  payload: currentUser;
+}
+
+interface RegisterSuccessAction {
+  type: typeof REGISTER_SUCCESS;
+  payload: string;
+}
+
+interface loginSuccess {
+  type: typeof LOGIN_SUCCESS;
+  payload: string;
+}
+
+export type AuthAction =
+  | logout
+  | RegisterSuccessAction
+  | UserLoadingAction
+  | loginSuccess
+  | AuthError;
