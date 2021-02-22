@@ -21,6 +21,8 @@ mongoose.connect(process.env.DATABASE, {
 //オリジン間リソース
 app.use(cors());
 app.use(morgan("dev"))
+//これでjson形式がで帰ってくる
+app.use(express.json());
 
 // route middleware
 readdirSync("./routes").map((r) => app.use("/api", require(`./routes/${r}`)));

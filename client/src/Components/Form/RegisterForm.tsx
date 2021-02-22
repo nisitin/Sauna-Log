@@ -5,6 +5,7 @@ import {RootState} from "../../redux/models/rootreducer";
 interface Props {
     onChange: (e: React.ChangeEvent<HTMLInputElement>) => void;
     onSubmit: (e: React.FormEvent) => void;
+    registerRation: Register
 }
 
 interface Register {
@@ -16,7 +17,14 @@ interface Register {
 //ここはinterface登録するときに必要な部分
 
 
-const RegisterForm: FC<Props> = ({onChange, onSubmit }) => {
+const RegisterForm: FC<Props> = ({onChange, onSubmit, registerRation }) => {
+
+    const initialValues: Register = {
+        name: "",
+        email: "",
+        password: "",
+        password2: ""
+    }
 
 
     const [name, setName] = useState('');

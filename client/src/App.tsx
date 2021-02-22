@@ -1,6 +1,8 @@
 import React from 'react';
 import {BrowserRouter, Switch, Route} from "react-router-dom";
-import Home from "./Components/Home";
+import Home from "./Page/Home";
+import Login from "./Page/Login";
+import Register from "./Page/Register";
 import LoginForm from "./Components/Form/LoginForm";
 import RegisterForm from "./Components/Form/RegisterForm";
 // Components 
@@ -17,8 +19,8 @@ const App: React.FC = ()  =>{
     <Header />
       <Switch>
         <Route exact path="/" component={Home} />
-        <Route exact path="/register" component={RegisterForm} />
-        <Route exact path="/login" component={LoginForm} />
+        <Route exact path="/login" component={Login} />
+        <Route exact path="/register" component={Register} />
       </Switch>
     </BrowserRouter>
     </>
