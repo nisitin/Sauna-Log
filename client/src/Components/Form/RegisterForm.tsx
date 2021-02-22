@@ -1,11 +1,23 @@
-import React,{useState} from "react";
+import React,{FC, useState} from "react";
+import {useSelector} from "react-redux";
+import {RootState} from "../../redux/models/rootreducer";
+
+interface Props {
+    onChange: (e: React.ChangeEvent<HTMLInputElement>) => void;
+    onSubmit: (e: React.FormEvent) => void;
+}
+
+interface Register {
+    name: string
+    email: string,
+    password: string,
+    password2: string
+}
+//ここはinterface登録するときに必要な部分
 
 
-// interface Props {
-//     onChange: (e: React.ChangeEvent<HTMLInputElement>) => void
-// }
+const RegisterForm: FC<Props> = ({onChange, onSubmit }) => {
 
-const RegisterForm = () => {
 
     const [name, setName] = useState('');
     const [email, setEmail] = useState('');

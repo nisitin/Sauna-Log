@@ -1,5 +1,9 @@
+import { type } from "os";
 import { combineReducers } from "redux";
+import authReducer from "./auth/authreducers";
 
-const rootReducer = combineReducers({});
+export const rootReducer = combineReducers({
+  auth: authReducer,
+});
 
-export default rootReducer;
+export type RootState = ReturnType<typeof rootReducer>;
