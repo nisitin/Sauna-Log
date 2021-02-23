@@ -18,15 +18,22 @@ interface RegisterValues {
 
 
 const RegisterForm = () => {
-    const {register, setValue, handleSubmit, errors} = useForm();
-
-   
-
+    const {register, setValue, handleSubmit, errors} = useForm<RegisterValues>();
+    const onSubmit = handleSubmit(({name, email, password, password2}) => {
+        console.log(onSubmit);
+    })
 
     return (
-        <>
-           
-        </>
+        <form onSubmit={onSubmit}>
+            <label>お名前</label>
+            <input name="name" ref={register}/>
+            <label>メールアドレス</label>
+            <input name="email" />
+            <label>パスワード</label>
+            <input name="password" type="password"/>
+
+            <button type="submit">登録</button>
+        </form>
     )
 }
 

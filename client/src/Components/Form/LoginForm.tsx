@@ -1,47 +1,23 @@
-import React,{useState} from "react";
+import React from "react";
+import {useForm} from "react-hook-form"
 
-interface Props {
-    
-}
 
 interface Login {
-    
+    email: string,
+    password: string   
 }
 
 const LoginForm = () => {
-    const [email, setEmail] = useState('');
-    const [password, setPassword] = useState('');
-
-    const handelSubmit = (e: React.FormEvent<HTMLFormElement>) => {
-        e.preventDefault();
-    }
+  const {register,handleSubmit, errors} = useForm<Login>(); 
+    const onSubmit = handleSubmit(({email, password}) => {
+        console.log(email, password);
+    })
 
     return (
         <>
-            <h1>ログイン</h1>
-            <form>
-        
-            <div className="form-group-email">
-                <input
-                  type="email"
-                  placeholder="aaa@sample.com"
-                  className="form-control"
-                  value={email}
-                  onChange={(e) => setEmail(e.target.value)}
-                  />
-            </div>
-            <div className="form-group-email">
-                <input
-                  type="text"
-                  placeholder="xxxxxxxxx"
-                  className="form-control"
-                  value={password}
-                  onChange={(e) => setPassword(e.target.value)}
-                  />
-            </div>
-
-             <button>送信</button>
-             </form>
+           <input name="email" ref={register}/>
+           <input name="password" ref={register}/>
+           <button type="submit">ログイン</button>
         </>
     )
 }

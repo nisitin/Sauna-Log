@@ -51,7 +51,7 @@ export const authReducer = (
         loading: false,
         user: null,
       };
+    default:
+      return state;
   }
 };
-
-export default authReducer;
