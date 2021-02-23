@@ -1,4 +1,3 @@
-import { type } from "os";
 import { combineReducers } from "redux";
 import authReducer from "./auth/authreducers";
 
