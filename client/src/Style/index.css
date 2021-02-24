@@ -4,7 +4,11 @@
 }
 
 /* --------------------page----------------- */
-.header {
-}
 
 /* --------------------Components----------------- */
+.header {
+}
+.footer {
+  background-color: #fbf6f0;
+  height: 30px;
+}

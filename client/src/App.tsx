@@ -7,7 +7,7 @@ import LoginForm from "./Components/Form/LoginForm";
 import RegisterForm from "./Components/Form/RegisterForm";
 // Components 
 import {Header} from "./Components/Header"
-
+import Footer from "./Components/Footer";
 
 
 
@@ -21,6 +21,7 @@ const App: React.FC = ()  =>{
         <Route exact path="/login" component={Login} />
         <Route exact path="/register" component={Register} />
       </Switch>
+     <Footer />
     </BrowserRouter>
     </>
   );

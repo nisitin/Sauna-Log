@@ -1,18 +1,15 @@
 import {
   REGISTER_SUCCESS,
-  REGISTER_FAIL,
   LOGIN_SUCCESS,
-  LOGIN_FAIL,
   AUTH_ERROR,
   LOGOUT,
-  USER_LOADED,
   USER_LOADING,
 } from "../../constants/index";
 
 export interface AuthState {
   token: string | null;
   isAuthenticated: boolean | null;
-  loading: boolean;
+  isLoading: boolean;
   user: currentUser | null;
 }
 
@@ -46,10 +43,21 @@ interface AuthError {
   type: typeof AUTH_ERROR;
 }
 
+// interface LoginError {
+//   type: typeof LOGIN_FAIL;
+// }
+
+// interface RegisterError {
+//   type: typeof REGISTER_FAIL;
+// }
+
 interface UserLoadingAction {
   type: typeof USER_LOADING;
   payload: currentUser;
 }
+// interface UserLoaded {
+//   type: typeof USER_LOADED;
+// }
 
 interface RegisterSuccessAction {
   type: typeof REGISTER_SUCCESS;
@@ -65,5 +73,8 @@ export type AuthAction =
   | logout
   | RegisterSuccessAction
   | UserLoadingAction
+  // | UserLoaded
   | loginSuccess
+  // | RegisterError
+  // | LoginError
   | AuthError;
