@@ -9,7 +9,6 @@ import RegisterForm from "./Components/Form/RegisterForm";
 import {Header} from "./Components/Header"
 
 
-import './App.css';
 
 
 const App: React.FC = ()  =>{

@@ -1,10 +1,12 @@
 import {
   REGISTER_SUCCESS,
+  REGISTER_FAIL,
   LOGIN_SUCCESS,
-  LOGOUT,
-  USER_LOADING,
-  SET_CURRENT_USER,
+  LOGIN_FAIL,
   AUTH_ERROR,
+  LOGOUT,
+  USER_LOADED,
+  USER_LOADING,
 } from "../../constants/index";
 
 export interface AuthState {

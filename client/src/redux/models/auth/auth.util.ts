@@ -1,9 +1,11 @@
-import axios from "axios";
+import API from "../../api";
 
 export const setAuthToken = (token: string) => {
   if (token) {
-    axios.defaults.headers.common["Authorization"] = token;
+    API.defaults.headers.common["x-auth-token"] = token;
+    localStorage.setItem("sauna-token", token);
   } else {
-    delete axios.defaults.headers.common["Authorization"];
+    delete API.defaults.headers.common["x-auth-token"];
+    localStorage.removeItem("sauna-token");
   }
 };

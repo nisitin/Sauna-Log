@@ -1,57 +1,57 @@
-import { AuthState, AuthAction } from "../auth/authTypes";
 import {
-  LOGIN_SUCCESS,
   REGISTER_SUCCESS,
+  REGISTER_FAIL,
+  LOGIN_SUCCESS,
+  LOGIN_FAIL,
   LOGOUT,
   AUTH_ERROR,
+  USER_LOADED,
   USER_LOADING,
-  SET_CURRENT_USER,
 } from "../../constants/index";
 
-const initialState: AuthState = {
-  token: localStorage.getItem("cstoken"),
+const initialState = {
+  token: localStorage.getItem("token"),
   isAuthenticated: null,
-  loading: false,
+  isLoading: false,
   user: null,
 };
-//ここは何もない状態のものを指している
 
-export const authReducer = (
-  state: AuthState = initialState,
-  action: AuthAction
-): AuthState => {
+export default function (state = initialState, action: any) {
   switch (action.type) {
     case USER_LOADING:
       return {
         ...state,
+        isLoading: true,
+      };
+    case USER_LOADED:
+      return {
+        ...state,
         isAuthenticated: true,
-        loading: false,
+        isLoading: false,
         user: action.payload,
       };
-    case REGISTER_SUCCESS:
-      return {
-        ...state,
-        token: action.payload,
-        isAuthenticated: true,
-        loading: false,
-      };
     case LOGIN_SUCCESS:
+    case REGISTER_SUCCESS:
+      localStorage.setItem("token", action.payload.token);
       return {
         ...state,
-        token: action.payload,
+        ...action.payload,
+        isLoading: false,
         isAuthenticated: true,
-        loading: false,
       };
-    case LOGOUT:
+    case REGISTER_FAIL:
+    case LOGIN_FAIL:
     case AUTH_ERROR:
+    case LOGOUT:
+      localStorage.removeItem("token");
       return {
         ...state,
         token: null,
-        isAuthenticated: false,
-        loading: false,
         user: null,
+        isLoading: false,
+        isAuthenticated: false,
       };
     default:
       return state;
   }
-};
+}
