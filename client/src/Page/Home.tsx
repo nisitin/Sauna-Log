@@ -1,12 +1,12 @@
 import React from "react";
+import saunaLogo from "../images/saunalogo.svg"
 
 const Home = () => {
     return (
         <div className="top">
             <div　className="container">
-             <h1>Home</h1>
              <div className="logo">
-                 {/* <img src="./images/Super Sogbu.png"/> */}
+                 <img className="logo-pic" src={saunaLogo} />
              </div>
             </div>
             <div>

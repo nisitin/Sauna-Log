@@ -31,7 +31,8 @@ const RegisterForm = () => {
             <input name="email" />
             <label>パスワード</label>
             <input name="password" type="password"/>
-
+            <label>パスワードの確認</label>
+            <input name="password2" type="password"/>
             <button type="submit">登録</button>
         </form>
     )

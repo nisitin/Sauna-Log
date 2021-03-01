@@ -10,7 +10,10 @@
   height: 80vh;
 }
 /* --------------------page----------------- */
-
+.logo-pic {
+  position: absolute;
+  left: 32%;
+}
 /* --------------------Components----------------- */
 .header {
 }
