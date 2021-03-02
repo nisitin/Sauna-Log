@@ -1,12 +1,6 @@
 import React,{FC, useState} from "react";
 import {useForm} from "react-hook-form";
-// import {RootState} from "../../redux/models/rootreducer";
 
-// interface Props {
-//     onChange: (e: React.ChangeEvent<HTMLInputElement>) => void;
-//     onSubmit: (e: React.FormEvent) => void;
-//     registerRation: RegisterValues
-// }
 
 interface RegisterValues {
     name: string
